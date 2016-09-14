@@ -11,14 +11,14 @@ def get_args():
     return parser.parse_args()
 
 
-def cipher(msg, cipher_num, decodify=False):
+def cipher(msg, cipher_num, decode=False):
     """
     Take a given message, cipher, and mode and transform the message. The default action will be to encode the message
     to obfuscate it's meaning, but you can also decode an obfuscated message provided you know it's cipher.
 
     :param msg: The message that you would like to either encode or decode
     :param cipher_num: The number of jumps to use in the cipher
-    :param decodify: a boolean to control if the function encodes or decodes the message you pass
+    :param decode: a boolean to control if the function encodes or decodes the message you pass
     :return:
     """
     # Create the base variables. ciphered_code will be the end result encoded/decoded string.
@@ -27,7 +27,7 @@ def cipher(msg, cipher_num, decodify=False):
     operators = ['-', '>', '+']
 
     # If decoding, invert the operators values
-    if decodify:
+    if decode:
         operators = ['+', '<', '-']
 
     # loop through each letter or digit in the message and change the values
@@ -52,6 +52,6 @@ def cipher(msg, cipher_num, decodify=False):
 if __name__ == '__main__':
     args = get_args()
     if args.decode:
-        cipher(args.msg, args.cipher, decodify=True)
+        cipher(args.msg, args.cipher, decode=True)
     else:
         cipher(args.msg, args.cipher)
