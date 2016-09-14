@@ -31,17 +31,17 @@ def cipher(msg, cipher_num, decodify=False):
         operators = ['+', '<', '-']
 
     # loop through each letter or digit in the message and change the values
-    for i in msg:
+    for char in msg:
         # Get the ordinal value of the ciphered value, adding or subtracting the cipher_num depending on the mode
-        ordinal = eval('{}{}{}'.format(ord(i), operators[2], cipher_num))
+        ordinal = eval('{}{}{}'.format(ord(char), operators[2], cipher_num))
 
         # For each data type check if the new ordinal is outside the range of that data type and if so, loop it back
         # around to the beginning of the range for that data type
-        if i.isupper() and not 65 <= ordinal <= 91:
+        if char.isupper() and not 65 <= ordinal <= 91:
             ordinal = eval('{}{}25'.format(ordinal, operators[0]))
-        elif i.islower() and not 97 <= ordinal <= 122:
+        elif char.islower() and not 97 <= ordinal <= 122:
             ordinal = eval('{}{}25'.format(ordinal, operators[0]))
-        elif i.isdigit() and not 48 <= ordinal <= 57:
+        elif char.isdigit() and not 48 <= ordinal <= 57:
             ordinal = eval('{}{}9'.format(ordinal, operators[0]))
 
         # Add the transformed letter or digit to the ciphered_code var which will contain the full transformed string
