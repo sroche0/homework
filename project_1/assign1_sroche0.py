@@ -11,7 +11,7 @@ def get_args():
     return parser.parse_args()
 
 
-def cipher(msg, cipher_num, decode=False):
+def cipher_ordinally(msg, cipher_num, decode=False):
     """
     Take a given message, cipher, and mode and transform the message. The default action will be to encode the message
     to obfuscate it's meaning, but you can also decode an obfuscated message provided you know it's cipher.
@@ -49,9 +49,55 @@ def cipher(msg, cipher_num, decode=False):
     print('Ciphered message: {}'.format(ciphered_code))
 
 
+def cipher_by_list(msg, cipher_num, decode=False):
+    """
+    Take a given message, cipher, and mode and transform the message. The default action will be to encode the message
+    to obfuscate it's meaning, but you can also decode an obfuscated message provided you know it's cipher.
+
+    :param msg: The message that you would like to either encode or decode
+    :param cipher_num: The number of jumps to use in the cipher
+    :param decode: a boolean to control if the function encodes or decodes the message you pass
+    :return:
+    """
+    # Create the base variables. ciphered_code will be the end result encoded/decoded string.
+    # alphanum_list is the list containing all the cipherable characters
+    alphanum_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+                     'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
+                     'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ', '0', '1', '2', '3', '4', '5', '6',
+                     '7', '8', '9']
+    ciphered_code = ''
+
+    # Iterate through the passed message transforming every character
+    for char in msg:
+        # Catch if the user passed a character we weren't expecting and gracefully quit
+        try:
+            pos = alphanum_list.index(char)
+        except ValueError:
+            print('ERROR. This program can only cipher or decipher alphanumeric characters and spaces.')
+            print('Remove any special or unicode characters and try again')
+            exit('Quitting...')
+
+        # Get the ciphered character by adding/subtracting the cipher number from the current index (pos)
+        if decode:
+            pos = pos - cipher_num
+            if pos < 0:
+                pos = abs(pos) # if the index is negative after subtracting, use it's absolute value
+        else:
+            pos = pos + cipher_num
+            if pos > len(alphanum_list):
+                # if the index is greater than the len of the list, subtract the list len() to loop back around to the
+                # beginning of the list
+                pos -= len(alphanum_list)
+
+        # Store the characters value to ciphered_code to be printed later
+        ciphered_code += alphanum_list[pos]
+
+    print('Ciphered message: {}'.format(ciphered_code))
+
+
 if __name__ == '__main__':
     args = get_args()
     if args.decode:
-        cipher(args.msg, args.cipher, decode=True)
+        cipher_by_list(args.msg, int(args.cipher), decode=True)
     else:
-        cipher(args.msg, args.cipher)
+        cipher_by_list(args.msg, int(args.cipher))
