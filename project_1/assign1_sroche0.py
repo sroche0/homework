@@ -6,7 +6,7 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--msg', help='the text to encode or decode')
     parser.add_argument('--decode', help='Flag to control decoding vs encoding', action='store_true', default=False)
-    parser.add_argument('--cipher', help='number of ordinals to step in the cipher', default=15)
+    parser.add_argument('--cipher', help='number of steps in the cipher', default=15)
 
     return parser.parse_args()
 
