@@ -1,0 +1,20 @@
+(class) shroche@bb-8:~/git/homework/project_1 > python assign1_sroche0.py --help
+usage: assign1_sroche0.py [-h] [--msg MSG] [--decode] [--cipher CIPHER]
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --msg MSG        the text to encode or decode
+  --decode         Flag to control decoding vs encoding
+  --cipher CIPHER  number of ordinals to step in the cipher
+(class) shroche@bb-8:~/git/homework/project_1 > python assign1_sroche0.py --msg 'AaBbCc 123' --cipher 1
+Ciphered message: BbCcDd0234
+(class) shroche@bb-8:~/git/homework/project_1 > python assign1_sroche0.py --msg 'BbCcDd0234' --cipher 1 --decode
+Ciphered message: AaBbCc 123
+(class) shroche@bb-8:~/git/homework/project_1 > python assign1_sroche0.py --msg 'ZzXxYy 123' --cipher 15
+Ciphered message: dObMcNeghi
+(class) shroche@bb-8:~/git/homework/project_1 > python assign1_sroche0.py --msg 'dObMcNeghi' --cipher 15 --decode
+Ciphered message: ZzXxYy 123
+(class) shroche@bb-8:~/git/homework/project_1 > python assign1_sroche0.py --msg 'ZzXxYy 123 !@' --cipher 15
+ERROR. This program can only cipher or decipher alphanumeric characters and spaces.
+Remove any special or unicode characters and try again
+Quitting...

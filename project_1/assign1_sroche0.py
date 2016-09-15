@@ -80,11 +80,9 @@ def cipher_by_list(msg, cipher_num, decode=False):
         # Get the ciphered character by adding/subtracting the cipher number from the current index (pos)
         if decode:
             pos = pos - cipher_num
-            if pos < 0:
-                pos = abs(pos) # if the index is negative after subtracting, use it's absolute value
         else:
             pos = pos + cipher_num
-            if pos > len(alphanum_list):
+            if pos >= len(alphanum_list):
                 # if the index is greater than the len of the list, subtract the list len() to loop back around to the
                 # beginning of the list
                 pos -= len(alphanum_list)
