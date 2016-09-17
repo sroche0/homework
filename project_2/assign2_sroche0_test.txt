@@ -1,0 +1,62 @@
+(class) shroche@bb-8:~/git/homework/project_2 > python assign2_sroche0.py --help
+usage: assign2_sroche0.py [-h] [--num NUM]
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --num NUM   The number you would like to check goldbach's conjecture with
+
+(class) shroche@bb-8:~/git/homework/project_2 > python assign2_sroche0.py --num 100
+There are 6 pairs of primes that add up to 100:
+  (3, 97)
+  (11, 89)
+  (17, 83)
+  (29, 71)
+  (41, 59)
+  (47, 53)
+
+(class) shroche@bb-8:~/git/homework/project_2 > python assign2_sroche0.py --num 1000
+There are 28 pairs of primes that add up to 1000:
+  (3, 997)
+  (17, 983)
+  (23, 977)
+  (29, 971)
+  (47, 953)
+  (53, 947)
+  (59, 941)
+  (71, 929)
+  (89, 911)
+  (113, 887)
+  (137, 863)
+  (173, 827)
+  (179, 821)
+  (191, 809)
+  (227, 773)
+  (239, 761)
+  (257, 743)
+  (281, 719)
+  (317, 683)
+  (347, 653)
+  (353, 647)
+  (359, 641)
+  (383, 617)
+  (401, 599)
+  (431, 569)
+  (443, 557)
+  (479, 521)
+  (491, 509)
+
+(class) shroche@bb-8:~/git/homework/project_2 > python assign2_sroche0.py --num 4
+While it is an even integer, 4 is not really a Goldbach number.
+Try again with a number larger than 4
+
+What even number would you like to test? > none
+"none" is not an integer. Goldbach's conjecture can only be applied to even integers
+
+What even number would you like to test? > 27
+"27" is not even. Goldbach's conjecture can only be applied to even integers.
+
+What even number would you like to test? > 32
+There are 2 pairs of primes that add up to 32:
+  (3, 29)
+  (13, 19)
+(class) shroche@bb-8:~/git/homework/project_2 >
