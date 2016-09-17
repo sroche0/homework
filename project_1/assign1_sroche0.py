@@ -4,7 +4,7 @@ import argparse
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--msg', help='the text to encode or decode')
+    parser.add_argument('--msg', help='the text to encode or decode', required=True)
     parser.add_argument('--decode', help='Flag to control decoding vs encoding', action='store_true', default=False)
     parser.add_argument('--cipher', help='number of steps in the cipher', default=15)
 
@@ -80,12 +80,16 @@ def cipher_by_list(msg, cipher_num, decode=False):
         # Get the ciphered character by adding/subtracting the cipher number from the current index (pos)
         if decode:
             pos = pos - cipher_num
+            if abs(pos) >= len(alphanum_list) - 1:
+                # if the index is greater than the len of the list, modulo index by the list len() to loop back around
+                # to the beginning of the list
+                pos = (abs(pos) % len(alphanum_list)) * -1
         else:
-            pos = pos + cipher_num
-            if pos >= len(alphanum_list):
-                # if the index is greater than the len of the list, subtract the list len() to loop back around to the
-                # beginning of the list
-                pos -= len(alphanum_list)
+            pos += cipher_num
+            if pos >= len(alphanum_list) -1:
+                # if the index is greater than the len of the list, modulo index by the list len() to loop back around
+                # to the beginning of the list
+                pos %= len(alphanum_list)
 
         # Store the characters value to ciphered_code to be printed later
         ciphered_code += alphanum_list[pos]
