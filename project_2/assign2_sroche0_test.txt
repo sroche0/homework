@@ -60,3 +60,19 @@ There are 2 pairs of primes that add up to 32:
   (3, 29)
   (13, 19)
 (class) shroche@bb-8:~/git/homework/project_2 >
+
+===========================
+
+(class) shroche@bb-8:~/git/homework/project_2 > python
+Python 3.5.2 (default, Jul  5 2016, 12:43:10)
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+>>> from assign2_sroche0 import goldbachChecker
+>>> a = goldbachChecker(46)
+There are 4 pairs of primes that add up to 46:
+  3, 43
+  5, 41
+  17, 29
+  23, 23
+>>>
