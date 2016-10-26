@@ -1,0 +1,16 @@
+city,name,zip,cid,favorite_manager,discount,state,address
+Utapau,Admiral Ackbar,01720,619738273,Lando Calrissian,10,MA,383 NeiMoidian Road
+Yavin,Jar Jar Binks,01376,505679300,Wuher,15,MA,550 Mon Calamari Street
+Jakku,Boba Fett,02330,447562366,Lando Calrissian,15,MA,77 Sullustan Street
+Hoth,Grummgar,02154,017707993,Watto,10,MA,198 Jawa Street
+Mos Eisely,Obi-Wan Kenobi,01460,060794278,Maz Kanata,10,MA,642 Utai Street
+Mos Eisely,Beru Lars,01460,185618838,Lando Calrissian,10,MA,459 Amani Road
+Bespin,Mon Mothma,02381,108961755,Maz Kanata,10,MA,885 Bith Avenue
+Geonosis,Leia Amidala Skywalker Organa Solo,02100,648088570,Maz Kanata,10,MA,115 Besalisk Street
+Kamino,Unkar Plutt,04262,212257394,Maz Kanata,10,ME,816 Mon Calamari Street
+Naboo,Kylo Ren,01776,830150428,Watto,10,MA,892 Amani Road
+Mos Espa,Sebulba,01341,051285649,Maz Kanata,10,MA,740 Rodian Street
+Cloud City,Grand Moff Wilhuff Tarkin,04613,330885271,Lando Calrissian,10,ME,623 Gungan Avenue
+Hoth,Saesee Tiin,02154,817355585,Wuher,10,MA,190 Amani Road
+Cloud City,Finis Valorum,04613,213622911,Watto,10,ME,581 Cerean Road
+Geonosis,Wicket W. Warrick,02100,193973451,Lando Calrissian,10,MA,851 NeiMoidian Road
